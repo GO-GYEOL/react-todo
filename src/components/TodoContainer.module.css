@@ -1,0 +1,15 @@
+.container {
+  width: 300px;
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+}
+
+.inputLine {
+  display: flex;
+}
+
+.input {
+  width: 100%;
+}
