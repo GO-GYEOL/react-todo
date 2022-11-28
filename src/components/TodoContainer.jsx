@@ -45,86 +45,47 @@ export default function TodoContainer() {
 
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
   return (
-    <>
+    <section className={styles.container_dark}>
       {darkMode ? (
-        <section className={styles.container_dark}>
-          <button onClick={toggleDarkMode}>White</button>
-          <div className={styles.classification}>
-            <button
-              onClick={() => onClassSelect({ classification: "All" })}
-              className={styles.classButton}
-            >
-              All
-            </button>
-            <button
-              onClick={() => onClassSelect({ classification: "Active" })}
-              className={styles.classButton}
-            >
-              Active
-            </button>
-            <button
-              onClick={() => onClassSelect({ classification: "Completed" })}
-              className={styles.classButton}
-            >
-              Completed
-            </button>
-          </div>
-          <TodoList
-            items={items}
-            onDelete={onDelete}
-            onCheck={onCheck}
-            classification={classification}
-          />
-          <form onSubmit={onSubmit} className={styles.inputLine}>
-            <input
-              type="text"
-              className={styles.input}
-              value={inputValue}
-              onChange={onChange}
-            />
-            <button>Add</button>
-          </form>
-        </section>
+        <button onClick={toggleDarkMode}>Light</button>
       ) : (
-        <section className={styles.container}>
-          <button>Dark</button>
-          <div className={styles.classification}>
-            <button
-              onClick={() => onClassSelect({ classification: "All" })}
-              className={styles.classButton}
-            >
-              All
-            </button>
-            <button
-              onClick={() => onClassSelect({ classification: "Active" })}
-              className={styles.classButton}
-            >
-              Active
-            </button>
-            <button
-              onClick={() => onClassSelect({ classification: "Completed" })}
-              className={styles.classButton}
-            >
-              Completed
-            </button>
-          </div>
-          <TodoList
-            items={items}
-            onDelete={onDelete}
-            onCheck={onCheck}
-            classification={classification}
-          />
-          <form onSubmit={onSubmit} className={styles.inputLine}>
-            <input
-              type="text"
-              className={styles.input}
-              value={inputValue}
-              onChange={onChange}
-            />
-            <button>Add</button>
-          </form>
-        </section>
+        <button onClick={toggleDarkMode}>Dark</button>
       )}
-    </>
+      <div className={styles.classification}>
+        <button
+          onClick={() => onClassSelect({ classification: "All" })}
+          className={styles.classButton}
+        >
+          All
+        </button>
+        <button
+          onClick={() => onClassSelect({ classification: "Active" })}
+          className={styles.classButton}
+        >
+          Active
+        </button>
+        <button
+          onClick={() => onClassSelect({ classification: "Completed" })}
+          className={styles.classButton}
+        >
+          Completed
+        </button>
+      </div>
+      <TodoList
+        items={items}
+        onDelete={onDelete}
+        onCheck={onCheck}
+        classification={classification}
+      />
+      <form onSubmit={onSubmit} className={styles.inputLine}>
+        <input
+          type="text"
+          className={styles.input}
+          value={inputValue}
+          onChange={onChange}
+        />
+        <button>Add</button>
+      </form>
+    </section>
   );
 }
