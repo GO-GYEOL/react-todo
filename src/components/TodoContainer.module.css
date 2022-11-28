@@ -1,9 +1,17 @@
 .container {
   width: 300px;
-  background-color: red;
+  background-color: white;
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
+}
+.container_dark {
+  background-color: black;
+  color: white;
+  border: 1px solid whitesmoke;
+  display: flex;
+  flex-direction: column;
 }
 
 .inputLine {
@@ -12,4 +20,13 @@
 
 .input {
   width: 100%;
+}
+
+.classification {
+  display: flex;
+  justify-content: end;
+}
+
+.classButton {
+  margin-left: 10px;
 }

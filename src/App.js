@@ -1,12 +1,14 @@
 import "./App.css";
 import TodoContainer from "./components/TodoContainer";
-
+import { DarkModeProvider } from "./context/DarkModeContext";
 
 function App() {
   return (
-    <div className="container">
-      <TodoContainer />
-    </div>
+    <DarkModeProvider>
+      <div className="container">
+        <TodoContainer />
+      </div>
+    </DarkModeProvider>
   );
 }
 
